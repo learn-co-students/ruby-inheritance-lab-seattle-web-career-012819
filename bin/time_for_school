@@ -12,9 +12,31 @@ avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
-
-some_knowledge = avi.teach 
+some_knowledge = avi.teach
 
 steve.learn(some_knowledge)
 
-puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+### BEGIN: BONUS SECTION ###
+
+jim = User.new
+#jim.learn = some_knowledge # This line will fail because there is no User#learn method
+
+# New Student
+temple = Student.new
+temple.first_name = "Temple"
+temple.last_name = "Grandin"
+
+5.times do |i|
+  more_knowledge = avi.teach
+  steve.learn(more_knowledge)
+  !!(i % 2) ? temple.learn(more_knowledge) : nil
+end
+
+[steve, temple].each { |s|
+  class_report =  "#{s.first_name} just learned this important knowledge:\n\n"
+  class_report += "\"#{s.knowledge.join("\n")}\"\n\n"
+  class_report += "from #{avi.first_name}.\n\n"
+  puts class_report
+}
+
+### END: BONUS SECTION ###
