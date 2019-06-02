@@ -12,6 +12,8 @@ avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
+# jim = User.new("Jim", "Jimmery")
+steve.learn("hi")
 
 some_knowledge = avi.teach 
 
